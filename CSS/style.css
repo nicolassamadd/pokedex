@@ -10,3 +10,41 @@ root {
     --secondary-color: #E6C230;
     --font-family: 'Arial', sans-serif;
 }
+
+header {
+    background: linear-gradient(90deg,rgba(203, 176, 65, 1) 0%, rgba(237, 221, 83, 1) 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 35px;
+
+    .imgUser {
+        width: 100%;
+        height: auto;
+    }
+}
+
+.hero-carrossel {
+  padding: 0;
+  overflow: hidden;
+
+  .slides {
+    width: 100vw;
+    white-space: nowrap;
+    overflow: hidden;
+
+    .imgSlide {
+      display: inline-block;
+      animation: anima 40s linear infinite;
+
+      img {
+        width: 30vw;
+        height: 30vw;
+        border-radius: 15px;
+        margin-right: 8px;
+        object-fit: con;
+      }
+    }
+  }
+}
+
