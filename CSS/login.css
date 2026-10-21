@@ -1,6 +1,4 @@
-/* =========================================
-   1. VARIÁVEIS GLOBAIS (boa prática: tokens)
-   ========================================= */
+
 :root {
   --amarelo: #FFD400;
   --amarelo-escuro: #F5C400;
@@ -13,9 +11,6 @@
   --transicao: 0.25s ease;
 }
 
-/* =========================================
-   2. RESET BÁSICO
-   ========================================= */
 * {
   margin: 0;
   padding: 0;
@@ -32,9 +27,6 @@ body {
   padding: 2rem;
 }
 
-/* =========================================
-   3. LAYOUT PRINCIPAL (Grid: 2 colunas)
-   ========================================= */
 .container {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -44,9 +36,6 @@ body {
   width: 100%;
 }
 
-/* =========================================
-   4. COLUNA DA ESQUERDA — FORMULÁRIO
-   ========================================= */
 .login-box {
   display: flex;
   flex-direction: column;
@@ -81,7 +70,6 @@ body {
   opacity: 0.5;
 }
 
-/* --- Campos de input --- */
 .campo {
   display: flex;
   align-items: center;
@@ -127,7 +115,6 @@ body {
   text-transform: uppercase;
 }
 
-/* --- Botão Entrar --- */
 .btn-entrar {
   width: 100%;
   margin-top: 1.3rem;
@@ -148,7 +135,6 @@ body {
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
-/* --- Esqueceu senha --- */
 .esqueceu {
   margin-top: 1rem;
   text-align: center;
@@ -161,7 +147,6 @@ body {
   text-decoration: underline;
 }
 
-/* --- Botão Criar Conta --- */
 .btn-criar-conta {
   width: 100%;
   background: linear-gradient(180deg, #f6dd7a, #e8c94a);
@@ -181,16 +166,12 @@ body {
   filter: brightness(1.05);
 }
 
-/* =========================================
-   5. COLUNA DA DIREITA — ILUSTRAÇÃO
-   ========================================= */
 .ilustracao {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
 }
-
 
 .img-placeholder {
   display: flex;
@@ -218,9 +199,6 @@ body {
   aspect-ratio: 1 / 1;
 }
 
-/* =========================================
-   7. RESPONSIVIDADE
-   ========================================= */
 @media (max-width: 800px) {
   .container {
     grid-template-columns: 1fr;
