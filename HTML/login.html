@@ -1,45 +1,72 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/CSS/login.css">
-
-    <title>Login - Pokedex</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Login | PokéDex</title>
+<link rel="stylesheet" href="/pokedex/CSS/login.css">
 </head>
-
 <body>
-    <header>
-        <img src="/IMG/dragao.png" alt="Imagem de um dragão soltando fogo." class="imagemHeader">
-        <img src="/IMG/img-login.png"
-            alt="Uma imagem com uma escrita Login e um desenho de uma pokebola logo abaixo da ecrita."
-            class="imagemHeader">
-    </header>
-    <main>
-        <div class="ladoesquerdo">
-            <form action="">
-                <input type="email" required placeholder="E-MAIL">
-                <label id="email" for="email"></label>
 
-                <input type="password" required placeholder="SENHA">
-                <label id="senha" for="senha"></label>
+  <main class="container">
 
-                <button type="submit"> ENTRAR </button>
-            </form>
+    <!-- ============ FORMULÁRIO DE LOGIN ============ -->
+    <section class="login-box" aria-label="Formulário de login">
 
-            <a href="/HTML/rec.senha.html">Esqueceu sua senha?</a>
+      <div class="logo-topo">
+        <!-- PLACEHOLDER: troque por <img src="logo.png" alt="Logo"> -->
+          <img src="/pokedex/IMG/dragao.png" alt="">
+        
+<img src="/pokedex/IMG/img-login.png" alt="">
+      </div>
 
-            <a href="/HTML/cadastro.html">CRIAR CONTA</a>
+      <div class="divisor">
+        <span class="linha"></span>
+        <span class="linha"></span>
+      </div>
+
+      <form action="#" method="post" novalidate>
+
+        <div class="campo">
+          <input type="email" id="email" name="email" placeholder="E-MAIL" required autocomplete="email">
         </div>
 
-        <div class="ladodireito">
-            <img src="/IMG/pokedex.png" alt="Uma escrita Pokedex.">
-            <img src="/IMG/pikachu.png" alt="Imagem do pokemón Pikachu.">
+        <div class="campo campo-espacamento">
+          <input type="password" id="senha" name="senha" placeholder="SENHA" required autocomplete="current-password">
+          <button type="button" class="btn-olho" id="toggleSenha">MOSTRAR</button>
         </div>
-    </main>
 
-    <script src="script.js"></script>
+        <button type="submit" class="btn-entrar">
+          ENTRAR
+        </button>
+
+        <p class="esqueceu">
+          <a href="#">Esqueceu sua senha?</a>
+        </p>
+
+      </form>
+
+      <button type="button" class="btn-criar-conta">
+        CRIAR CONTA
+      </button>
+
+    </section>
+
+    <!-- ============ ÁREA DE IMAGEM (LOGO + MASCOTE) ============ -->
+    <section class="ilustracao" aria-hidden="true">
+
+      <!-- PLACEHOLDER: troque por <img src="pokedex-logo.png" alt="PokéDex"> -->
+      <div class="img-placeholder img-placeholder--titulo">
+        <img src="/pokedex/IMG/pokedex.png" alt="">
+      </div>
+
+      <!-- PLACEHOLDER: troque por <img src="mascote.png" alt="Mascote"> -->
+      <div class="img-placeholder img-placeholder--mascote">
+        <img src="/pokedex/IMG/pikachu.png" alt="">
+      </div>
+
+    </section>
+
+  </main>
 </body>
-
 </html>

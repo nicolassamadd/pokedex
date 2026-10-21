@@ -1,13 +1,243 @@
+/* =========================================
+   1. VARIÁVEIS GLOBAIS (boa prática: tokens)
+   ========================================= */
+:root {
+  --amarelo: #FFD400;
+  --amarelo-escuro: #F5C400;
+  --preto: #1a1a1a;
+  --preto-suave: #222222;
+  --texto-claro: #f2f2f2;
+  --placeholder: #8a8a8a;
+  --dourado: #C9A227;
+  --raio: 10px;
+  --transicao: 0.25s ease;
+}
 
+/* =========================================
+   2. RESET BÁSICO
+   ========================================= */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body, html {
-    background: #FFDE00;
-    width: 100%;
+body {
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  background-color: var(--amarelo);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
 }
 
-header {}
+/* =========================================
+   3. LAYOUT PRINCIPAL (Grid: 2 colunas)
+   ========================================= */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* =========================================
+   4. COLUNA DA ESQUERDA — FORMULÁRIO
+   ========================================= */
+.login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  max-width: 420px;
+}
+
+.logo-topo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.logo-topo h1 {
+  font-size: 2rem;
+  letter-spacing: 0.6rem;
+  color: var(--preto);
+}
+
+.divisor {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin: 0.6rem 0 1rem;
+}
+
+.divisor .linha {
+  flex: 1;
+  height: 2px;
+  background-color: var(--preto);
+  opacity: 0.5;
+}
+
+/* --- Campos de input --- */
+.campo {
+  display: flex;
+  align-items: center;
+  background-color: var(--preto-suave);
+  border-radius: var(--raio);
+  padding: 0.9rem 1.1rem;
+  gap: 0.8rem;
+  border: 1px solid transparent;
+  transition: border-color var(--transicao);
+}
+
+.campo:focus-within {
+  border-color: var(--amarelo-escuro);
+}
+
+.campo-espacamento {
+  margin-top: 1rem;
+}
+
+.campo input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--texto-claro);
+  font-size: 0.95rem;
+  letter-spacing: 0.15rem;
+  text-transform: uppercase;
+}
+
+.campo input::placeholder {
+  color: var(--placeholder);
+  letter-spacing: 0.15rem;
+}
+
+.btn-olho {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--texto-claro);
+  font-size: 0.75rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+}
+
+/* --- Botão Entrar --- */
+.btn-entrar {
+  width: 100%;
+  margin-top: 1.3rem;
+  background-color: var(--preto-suave);
+  color: var(--amarelo);
+  border: 1px solid var(--amarelo-escuro);
+  border-radius: var(--raio);
+  padding: 0.9rem 1.3rem;
+  font-size: 0.95rem;
+  letter-spacing: 0.3rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform var(--transicao), box-shadow var(--transicao);
+}
+
+.btn-entrar:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Esqueceu senha --- */
+.esqueceu {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.85rem;
+  color: var(--preto);
+}
+
+.esqueceu a {
+  color: var(--preto);
+  text-decoration: underline;
+}
+
+/* --- Botão Criar Conta --- */
+.btn-criar-conta {
+  width: 100%;
+  background: linear-gradient(180deg, #f6dd7a, #e8c94a);
+  border: 1px solid var(--dourado);
+  border-radius: var(--raio);
+  padding: 0.9rem 1.3rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.2rem;
+  font-weight: bold;
+  color: var(--preto);
+  cursor: pointer;
+  margin-top: 0.4rem;
+  transition: filter var(--transicao);
+}
+
+.btn-criar-conta:hover {
+  filter: brightness(1.05);
+}
+
+/* =========================================
+   5. COLUNA DA DIREITA — ILUSTRAÇÃO
+   ========================================= */
+.ilustracao {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+
+.img-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.img-placeholder--logo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  font-size: 0.6rem;
+}
+
+.img-placeholder--titulo {
+  width: 100%;
+  max-width: 320px;
+  height: 90px;
+}
+
+.img-placeholder--mascote {
+  width: 100%;
+  max-width: 340px;
+  aspect-ratio: 1 / 1;
+}
+
+/* =========================================
+   7. RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 800px) {
+  .container {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .login-box {
+    margin: 0 auto;
+    align-items: center;
+    text-align: left;
+  }
+
+  .logo-topo {
+    align-items: center;
+  }
+
+  .ilustracao {
+    order: -1;
+  }
+}

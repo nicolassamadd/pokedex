@@ -1,39 +1,47 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="cadastro.css">
-
-    <title>Cadastro - Pokedex</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pokédex - Login</title>
+<link rel="stylesheet" href="/pokedex/CSS/cadastro.css">
 </head>
 <body>
-    <header>
-        <a href=""></a>
-        <img src="" alt="" class="imagemHeader">
-    </header>
-    <main>
-        <img src="" alt="" class="criacaoConta">
 
-        <form action="">
-            <input type="text" required placeholder="NOME">
-            <label id="nome" for="nome"></label>
+  <div class="screen">
 
-            <input type="email" required placeholder="E-MAIL">
-            <label id="email" for="email"></label>
+    <button class="back-btn">&#8592;</button>
 
-            <input type="password" required placeholder="SENHA">
-            <label id="senha" for="senha"></label>
+    <!-- Substitua por: <img src="logo.png" alt="Pokédex"> -->
+    <div class="logo-placeholder">
+      <img src= "/pokedex/IMG/pokedex.png" alt="Pokédex" class="logo">    </div>
 
-            <input type="password" required placeholder="CONFIRMAR SENHA">
-            <label id="confirmarSenha" for="confirmarSenha"></label>
+    <button class="create-account-btn">
+      <span class="icon">&#128100;+</span>
+      <span>Criação de conta</span>
+    </button>
 
-            <button type="submit"> CRIAR CONTA </button>
-        </form>
+    <div class="input-group">
+      <div class="input-box">
+        <span class="icon">&#9993;</span>
+        <input type="email" placeholder="E-mail">
+      </div>
+    </div>
 
-        <img src="" alt="">
-    </main>
+    <div class="input-group">
+      <div class="input-box">
+        <span class="icon">&#128274;</span>
+        <input type="password" placeholder="Senha">
+        <span class="eye-icon">&#128065;</span>
+      </div>
+    </div>
 
-    <script src="script.js"></script>
+    <!-- Substitua por: <img src="charizard.png" alt="Charizard"> -->
+    <div class="character-placeholder">
+      <img src="/pokedex/IMG/image 8 (1).png" alt="Charizard" class="character">
+    </div>
+
+  </div>
+
 </body>
 </html>
