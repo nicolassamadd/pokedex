@@ -1,50 +1,291 @@
+/* ===== style.css — base compartilhada + index.html ===== */
+:root {
+  --ouro: #b9a24b;
+  --ouro-claro: #e0c94f;
+  --borda: #3a331a;
+  --fundo: #050507;
+  --painel: #15151b;
+  --texto: #f2f2f2;
+  --mudo: #9a9aa5
+}
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0
 }
 
-root {
-    --primary-color: #FFDE00;
-    --secondary-color: #E6C230;
-    --font-family: 'Arial', sans-serif;
+body {
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: "Segoe UI", system-ui, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column
 }
 
+a {
+  color: inherit;
+  text-decoration: none
+}
+
+button {
+  font: inherit;
+  cursor: pointer
+}
+
+main {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+  flex: 1
+}
+
+/* Header */
 header {
-    background: linear-gradient(90deg,rgba(203, 176, 65, 1) 0%, rgba(237, 221, 83, 1) 100%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 35px;
-
-    .imgUser {
-        width: 100%;
-        height: auto;
-    }
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: linear-gradient(180deg, #c4ad52, #a58f3c);
+  border-bottom: 2px solid #000
 }
 
-.hero-carrossel {
-  padding: 0;
-  overflow: hidden;
+.menu-hamburger {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  background: #000;
+  background-image: linear-gradient(var(--ouro-claro), var(--ouro-claro)), linear-gradient(var(--ouro-claro), var(--ouro-claro)), linear-gradient(var(--ouro-claro), var(--ouro-claro));
+  background-size: 18px 2px;
+  background-repeat: no-repeat;
+  background-position: center 11px, center 18px, center 25px
+}
 
-  .slides {
-    width: 100vw;
-    white-space: nowrap;
-    overflow: hidden;
+.menu-hamburger div {
+  display: none
+}
 
-    .imgSlide {
-      display: inline-block;
-      animation: anima 40s linear infinite;
+.imagemHeader {
+  height: 38px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%)
+}
 
-      img {
-        width: 30vw;
-        height: 30vw;
-        border-radius: 15px;
-        margin-right: 8px;
-        object-fit: con;
-      }
-    }
+header>a {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #000;
+  display: grid;
+  place-items: center;
+  background-image: radial-gradient(circle at 50% 38%, var(--ouro-claro) 3px, transparent 3.5px), radial-gradient(ellipse at 50% 88%, var(--ouro-claro) 7px, transparent 7.5px)
+}
+
+header>a:has(img) {
+  background-image: none
+}
+
+.imgUser {
+  width: 20px;
+  height: 20px;
+  object-fit: contain
+}
+
+/* Carrossel */
+.imgSlide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  margin: 10px 0 24px
+}
+
+.imgSlide img {
+  width: 140px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 3px solid var(--ouro)
+}
+
+.imgSlide img:first-child {
+  border-color: #f44
+}
+
+.imgSlide img:nth-child(2) {
+  width: min(400px, 50%);
+  height: 210px;
+  object-fit: contain;
+  padding: 14px;
+  background: linear-gradient(#e0c000, #000);
+  border: 8px solid #d9c000;
+  border-radius: 22px
+}
+
+.imgSlide img:nth-child(n+4) {
+  display: none
+}
+
+/* Pesquisa e filtros */
+#pesquisar {
+  display: block;
+  width: min(380px, 100%);
+  height: 34px;
+  margin: 0 auto;
+  border-radius: 20px;
+  border: 1px solid var(--ouro);
+  color: var(--texto);
+  padding: 0 16px 0 36px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23e0c94f' stroke-width='2.5'%3E%3Ccircle cx='10' cy='10' r='6'/%3E%3Cpath d='M15 15l6 6'/%3E%3C/svg%3E") 12px center/16px no-repeat, linear-gradient(90deg, #8d7a2e, #000)
+}
+
+#pesquisar::placeholder {
+  color: var(--mudo)
+}
+
+.filtros {
+  margin: 22px 0
+}
+
+.filtros hr {
+  border: 0;
+  border-top: 1px solid var(--ouro)
+}
+
+.filtro {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: -14px;
+  flex-wrap: wrap
+}
+
+.filtro button {
+  background: linear-gradient(#b9a24b, #8f7b2f);
+  color: #000;
+  border: 0;
+  border-radius: 6px;
+  padding: 5px 14px;
+  font-size: .78rem;
+  font-weight: 600
+}
+
+.filtro button:hover {
+  background: var(--ouro-claro)
+}
+
+/* Cards */
+.cards-pokemon {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px
+}
+
+.card {
+  position: relative;
+  border-radius: 14px;
+  background: linear-gradient(#b9a24b, #8f7b2f);
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 10px;
+  min-height: 190px
+}
+
+.card>img {
+  width: 100%;
+  height: 130px;
+  object-fit: contain;
+  background: #000;
+  border-radius: 10px
+}
+
+.informacoes {
+  padding: 0 34px 4px 2px
+}
+
+.informacoes h2 {
+  font-size: 1rem;
+  margin-bottom: 2px
+}
+
+.informacoes p {
+  font-size: .75rem
+}
+
+.informacoes::after {
+  content: "›";
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #000;
+  color: var(--ouro-claro);
+  display: grid;
+  place-items: center
+}
+
+/* Cores por tipo (adicione a classe no card) — os 3 primeiros seguem a referência */
+.card.planta,
+.card:nth-child(1) {
+  background: linear-gradient(#2a7a80, #0c2a1a);
+  color: #fff
+}
+
+.card.eletrico,
+.card:nth-child(2) {
+  background: #f5d90a
+}
+
+.card.fogo,
+.card:nth-child(3) {
+  background: linear-gradient(#f06a00, #8a1a1a);
+  color: #fff
+}
+
+.card.agua {
+  background: linear-gradient(#2d7bd6, #0b2a5a);
+  color: #fff
+}
+
+.card:nth-child(1)>img,
+.card:nth-child(3)>img,
+.card.planta>img,
+.card.fogo>img,
+.card.agua>img {
+  background: rgba(255, 255, 255, .12)
+}
+
+/* Footer */
+footer {
+  border-top: 1px solid var(--borda);
+  background: #0a0a0d;
+  padding: 18px;
+  text-align: center;
+  color: var(--mudo);
+  font-size: .78rem
+}
+
+@media(max-width:900px) {
+  .cards-pokemon {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .imgSlide img:not(:nth-child(2)) {
+    display: none
   }
 }
 
+@media(max-width:520px) {
+  .cards-pokemon {
+    grid-template-columns: 1fr
+  }
+}

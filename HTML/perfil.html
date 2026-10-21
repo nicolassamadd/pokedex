@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/perfil.css">
     <title>Perfil - Pokedex</title>
 </head>
 <body>
     <header>
-       // Menu Hamburger
+        <!-- Menu Hamburger -->
         <div class="menu-hamburger">
             <div class="Perfil"></div>
             <div class="Meus favoritos"></div>
@@ -15,16 +16,71 @@
             <div class="Sair / Deslogar"></div>
         </div>
 
-        <img src="" alt="" class="imagemHeader">
+        <img src="/IMG/dragao.png" alt="Imagem de um dragão soltando fogo." class="imagemHeader">
 
-        <a href="/HTML/perfil.html"></a>
+        <a href="perfil.html"><img src="/IMG/user.png" alt="Icone de usuário." class="imgUser"></a>
     </header>
-    <main>
-        
+    <main class="perfil">
+        <section class="perfil-card">
+            <img src="/IMG/user.png" alt="Foto do treinador" class="avatar">
+            <h1>Nome do Treinador</h1>
+            <p>treinador@email.com</p>
+            <p>Treinador desde 2026</p>
+            <a href="#editar" class="btn">Editar perfil</a>
+            <a href="#" class="btn sair">Sair</a>
+        </section>
+
+        <div class="perfil-lado">
+            <div class="numeros">
+                <div><strong>3</strong><span>Favoritos</span></div>
+                <div><strong>12</strong><span>Pokémons vistos</span></div>
+                <div><strong>4</strong><span>Tipos explorados</span></div>
+            </div>
+
+            <section class="perfil-bloco">
+                <h2>Meus favoritos</h2>
+                <article class="cards-pokemon">
+                    <div class="card">
+                        <img src="" alt="">
+                        <div class="informacoes">
+                            <h2>Nome do Pokémon</h2>
+                            <p>Tipo: </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="">
+                        <div class="informacoes">
+                            <h2>Nome do Pokémon</h2>
+                            <p>Tipo: </p>
+                        </div>
+                    </div>
+                    <div class="card">
+                        <img src="" alt="">
+                        <div class="informacoes">
+                            <h2>Nome do Pokémon</h2>
+                            <p>Tipo: </p>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="perfil-bloco" id="editar">
+                <h2>Dados da conta</h2>
+                <form class="form-perfil">
+                    <label>Nome<input type="text" value="Nome do Treinador"></label>
+                    <label>E-mail<input type="email" value="treinador@email.com"></label>
+                    <label>Nova senha<input type="password" placeholder="••••••••"></label>
+                    <button type="button" class="btn">Salvar alterações</button>
+                </form>
+            </section>
+        </div>
     </main>
     <footer>
-
+        <div class="informacoesFooter">
+            <p>© 2026 Pokedex. Todos os direitos reservados.</p>
+            <p>Desenvolvido por PIE UniAmérica.</p>
+        </div>
     </footer>
-    <script src="script.js"></script>       
+    <script src="script.js"></script>
 </body>
 </html>

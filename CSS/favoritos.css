@@ -1,0 +1,75 @@
+/* ===== favoritos.css — mantém o link atual do favoritos.html ===== */
+@import url("style.css");
+
+.pesquisa {
+    display: flex;
+    flex-direction: column
+}
+
+.cards-pokemon {
+    grid-template-columns: repeat(3, 1fr)
+}
+
+.card,
+.card:nth-child(n) {
+    background: #17171d;
+    color: var(--texto);
+    border: 1px solid var(--borda);
+    padding: 0;
+    gap: 0;
+    overflow: hidden
+}
+
+.card>img,
+.card:nth-child(n)>img {
+    height: 150px;
+    border-radius: 0;
+    background: #000
+}
+
+/* Cores como na referência: 1º planta, 3º fogo */
+.card:nth-child(1)>img {
+    background: linear-gradient(#2a7a80, #0c2a1a)
+}
+
+.card:nth-child(3)>img {
+    background: linear-gradient(#d4600a, #2a1004)
+}
+
+.card:nth-child(2)>img {
+    background: linear-gradient(#777, #ddd)
+}
+
+.informacoes {
+    padding: 14px 44px 14px 14px
+}
+
+.informacoes p {
+    color: var(--ouro-claro)
+}
+
+.informacoes::after {
+    background: #000;
+    border: 1px solid #2a2a2a
+}
+
+.card::after {
+    content: "♥";
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    color: #ff2d2d;
+    font-size: 1.2rem
+}
+
+@media(max-width:900px) {
+    .cards-pokemon {
+        grid-template-columns: repeat(2, 1fr)
+    }
+}
+
+@media(max-width:520px) {
+    .cards-pokemon {
+        grid-template-columns: 1fr
+    }
+}

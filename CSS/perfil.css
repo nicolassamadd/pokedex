@@ -1,0 +1,144 @@
+/* ===== perfil.css ===== */
+@import url("style.css");
+
+.perfil {
+    display: grid;
+    grid-template-columns: 290px 1fr;
+    gap: 24px
+}
+
+.perfil-card,
+.perfil-bloco {
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 24px
+}
+
+.perfil-card {
+    text-align: center;
+    align-self: start
+}
+
+.avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 14px;
+    background: linear-gradient(#d4b800, #000);
+    border: 3px solid var(--ouro-claro);
+    object-fit: cover;
+    display: block
+}
+
+.perfil-card h1 {
+    font-size: 1.3rem
+}
+
+.perfil-card p {
+    color: var(--mudo);
+    font-size: .85rem;
+    margin-top: 4px
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 18px;
+    background: linear-gradient(#c4ad52, #a58f3c);
+    color: #000;
+    border: 0;
+    border-radius: 10px;
+    padding: 9px 22px;
+    font-weight: 700
+}
+
+.btn.sair {
+    background: none;
+    border: 1px solid #ff6b6b;
+    color: #ff6b6b
+}
+
+.perfil-lado {
+    display: grid;
+    gap: 24px
+}
+
+.numeros {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px
+}
+
+.numeros div {
+    background: var(--painel);
+    border: 1px solid var(--borda);
+    border-radius: 14px;
+    padding: 14px;
+    text-align: center
+}
+
+.numeros strong {
+    display: block;
+    font-size: 1.6rem;
+    color: var(--ouro-claro)
+}
+
+.numeros span {
+    font-size: .75rem;
+    color: var(--mudo)
+}
+
+.perfil-bloco h2 {
+    font-size: 1rem;
+    color: var(--ouro-claro);
+    margin-bottom: 14px
+}
+
+.perfil-bloco .cards-pokemon {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px
+}
+
+.perfil-bloco .card {
+    min-height: 0;
+    padding: 8px
+}
+
+.perfil-bloco .card>img {
+    height: 80px
+}
+
+.form-perfil {
+    display: grid;
+    gap: 12px
+}
+
+.form-perfil label {
+    font-size: .78rem;
+    color: var(--mudo);
+    display: grid;
+    gap: 4px
+}
+
+.form-perfil input {
+    height: 38px;
+    border-radius: 8px;
+    border: 1px solid #2a2a33;
+    background: #0d0d12;
+    color: var(--texto);
+    padding: 0 12px
+}
+
+@media(max-width:900px) {
+    .perfil {
+        grid-template-columns: 1fr
+    }
+}
+
+@media(max-width:520px) {
+
+    .numeros,
+    .perfil-bloco .cards-pokemon {
+        grid-template-columns: 1fr
+    }
+}
