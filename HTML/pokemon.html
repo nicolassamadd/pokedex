@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/pokemon.css">
+    <link rel="stylesheet" href="/CSS/extras.css">
     <title>Pokémon - Pokedex</title>
 </head>
 
 <body>
     <header>
-        // Menu Hamburger
+        <!-- Menu Hamburger -->
         <div class="menu-hamburger">
             <div class="Perfil"></div>
             <div class="Meus favoritos"></div>
@@ -17,61 +19,57 @@
             <div class="Sair / Deslogar"></div>
         </div>
 
-        <img src="" alt="" class="imagemHeader">
+        <img src="/IMG/dragao.png" alt="Imagem de um dragão soltando fogo." class="imagemHeader">
 
-        <a href="/HTML/perfil.html"></a>
+        <a href="perfil.html"><img src="/IMG/user.png" alt="Icone de usuário." class="imgUser"></a>
     </header>
     <main>
         <div class="barra">
-            <img src="" alt="" class="setaVoltar">
+            <a href="index.html"><img src="/IMG/seta.png" alt="Voltar para a página inicial." class="setaVoltar"></a>
 
-            input type="text" placeholder="Pesquisar Pokémon" id="pesquisar">
+            <input type="text" placeholder="Pesquisar Pokémon" id="pesquisar">
             <label for="pesquisar"></label>
         </div>
 
-        <img src="" alt="" class="pokemon">
+        <!-- Tudo abaixo é preenchido pelo script.js com os dados da PokeAPI (pokemon.html?id=NÚMERO) -->
+        <!-- A ficha (tipo, peso, altura e categoria) é criada pelo script.js antes desta imagem -->
+        <img alt="Imagem do pokemon." class="pokemon">
 
         <div class="estatistica">
             <ul>
-                <li>HP: </li>
-                <li>ATAQUE: </li>
-                <li>DEFESA: </li>
-                <li>SP. ATK: </li>
-                <li>SP. DEF: </li>
-                <li>VELOCIDADE: </li>
+                <li style="--v:0">HP: -</li>
+                <li style="--v:0">ATAQUE: -</li>
+                <li style="--v:0">DEFESA: -</li>
+                <li style="--v:0">SP. ATK: -</li>
+                <li style="--v:0">SP. DEF: -</li>
+                <li style="--v:0">VELOCIDADE: -</li>
             </ul>
+            <div class="total"><span>TOTAL</span><b>-</b></div>
         </div>
 
         <div class="hr">
-            <img src="" alt="">
-            <p>Formas / Variantes</p>
+            <img src="/IMG/estrela.png" alt="">
+            <p>FORMAS / VARIANTES</p>
             <hr>
         </div>
 
-        <article>
-            <div>
-                <p></p>
-                <span></span>
-                <img src="" alt="">
-            </div>
-            <div>
-                <p></p>
-                <span></span>
-                <img src="" alt="">
-            </div>
-        </article>
+        <!-- Formas / variantes: criadas pelo script.js -->
+        <article></article>
 
         <div class="hr">
-            <img src="" alt="">
-            <p>Onde encontrar?</p>
+            <img src="/IMG/pin.png" alt="">
+            <p>ONDE ENCONTRAR?</p>
             <hr>
         </div>
 
-        // aside tag
-
+        <!-- Locais: criados pelo script.js -->
+        <aside></aside>
     </main>
     <footer>
-
+        <div class="informacoesFooter">
+            <p>© 2026 Pokedex. Todos os direitos reservados.</p>
+            <p>Desenvolvido por PIE UniAmérica.</p>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
