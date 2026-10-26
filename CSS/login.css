@@ -1,12 +1,11 @@
-
 :root {
-  --amarelo: #FFD400;
-  --amarelo-escuro: #F5C400;
+  --amarelo: #ffd400;
+  --amarelo-escuro: #f5c400;
   --preto: #1a1a1a;
   --preto-suave: #222222;
   --texto-claro: #f2f2f2;
   --placeholder: #8a8a8a;
-  --dourado: #C9A227;
+  --dourado: #c9a227;
   --raio: 10px;
   --transicao: 0.25s ease;
 }
@@ -18,7 +17,7 @@
 }
 
 body {
-  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  font-family: "Trebuchet MS", "Segoe UI", sans-serif;
   background-color: var(--amarelo);
   min-height: 100vh;
   display: flex;
@@ -127,7 +126,9 @@ body {
   letter-spacing: 0.3rem;
   font-weight: bold;
   cursor: pointer;
-  transition: transform var(--transicao), box-shadow var(--transicao);
+  transition:
+    transform var(--transicao),
+    box-shadow var(--transicao);
 }
 
 .btn-entrar:hover {
@@ -217,5 +218,101 @@ body {
 
   .ilustracao {
     order: -1;
+  }
+}
+
+.so-leitor {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+.login-box form {
+  display: flex;
+  flex-direction: column;
+}
+.logo-topo img {
+  max-width: 100%;
+  height: auto;
+}
+.logo-dragao {
+  width: 70px;
+}
+.logo-topo h1 {
+  letter-spacing: normal;
+}
+.titulo-img {
+  width: 100%;
+  max-width: 320px;
+}
+.ilustracao img {
+  max-width: 100%;
+  height: auto;
+}
+.ilustracao img:first-child {
+  max-width: 320px;
+}
+.ilustracao img:last-child {
+  max-width: 340px;
+}
+.campo label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+.btn-criar-conta {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+}
+.esqueceu {
+  margin-top: 0.2rem;
+}
+.mensagem {
+  margin-top: 0.9rem;
+  padding: 0.7rem 1rem;
+  border-radius: var(--raio);
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+.mensagem.erro {
+  background: #fff;
+  border: 1px solid #b00020;
+  color: #b00020;
+}
+.mensagem.ok {
+  background: #1a1a1a;
+  border: 1px solid var(--amarelo-escuro);
+  color: var(--amarelo);
+}
+@keyframes subir {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes flutuar {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .login-box {
+    animation: subir 0.6s ease-out;
+  }
+  .ilustracao img:last-child {
+    animation: flutuar 3s ease-in-out infinite;
   }
 }

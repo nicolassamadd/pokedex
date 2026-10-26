@@ -1,0 +1,25 @@
+@import url("login.css");
+
+.container {
+  grid-template-columns: 1fr;
+  max-width: 480px;
+}
+.login-box {
+  max-width: none;
+}
+.recuperar h1 {
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  color: var(--preto);
+}
+.recuperar p {
+  color: var(--preto);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+.voltar-login {
+  align-self: flex-start;
+  color: var(--preto);
+  font-weight: bold;
+  text-decoration: underline;
+}

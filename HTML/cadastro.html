@@ -1,53 +1,60 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pokédex - Login</title>
-  <link rel="stylesheet" href="/pokedex/CSS/cadastro.css">
-  <link rel="stylesheet" href="/CSS/extras.css">
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/CSS/cadastro.css">
+    <title>Cadastro - Pokedex</title>
 </head>
 
-<body>
+<body data-pagina="cadastro">
+    <main class="screen">
+        <a class="back-btn" href="/HTML/login.html" aria-label="Voltar para o login">&#8592;</a>
 
-  <div class="screen">
+        <header class="logo-placeholder">
+            <img src="/IMG/pokedex.png" alt="Pokédex" class="logo">
+        </header>
 
-    <button class="back-btn">&#8592;</button>
+        <h1 class="so-leitor">Criação de conta</h1>
+        <button type="submit" form="form-cadastro" class="create-account-btn">
+            <span class="icon" aria-hidden="true">&#128100;+</span>
+            <span>Criação de conta</span>
+        </button>
 
-    <div class="logo-placeholder">
-      <img src="/pokedex/IMG/pokedex.png" alt="Pokédex" class="logo">
-    </div>
+        <form id="form-cadastro">
+            <div class="input-group">
+                <label for="nome" class="so-leitor">Nome</label>
+                <div class="input-box">
+                    <span class="icon" aria-hidden="true">&#128100;</span>
+                    <input type="text" id="nome" name="nome" required placeholder="Nome" autocomplete="name">
+                </div>
+            </div>
 
-    <button class="create-account-btn">
-      <span class="icon">&#128100;+</span>
-      <span>Criação de conta</span>
-    </button>
+            <div class="input-group">
+                <label for="email" class="so-leitor">E-mail</label>
+                <div class="input-box">
+                    <span class="icon" aria-hidden="true">&#9993;</span>
+                    <input type="email" id="email" name="email" required placeholder="E-mail" autocomplete="email">
+                </div>
+            </div>
 
-    <div class="input-group">
-      <div class="input-box">
-        <span class="icon">&#9993;</span>
-        <input type="email" placeholder="E-mail">
-      </div>
-    </div>
+            <div class="input-group">
+                <label for="senha" class="so-leitor">Senha</label>
+                <div class="input-box">
+                    <span class="icon" aria-hidden="true">&#128274;</span>
+                    <input type="password" id="senha" name="senha" required minlength="6" placeholder="Senha (mín. 6)" autocomplete="new-password">
+                    <button type="button" class="eye-icon" data-olho="senha" aria-label="Mostrar senha">&#128065;</button>
+                </div>
+            </div>
+        </form>
 
-    <div class="input-group">
-      <div class="input-box">
-        <span class="icon">&#128274;</span>
-        <input type="password" placeholder="Senha">
-        <span class="eye-icon">&#128065;</span>
-      </div>
-    </div>
+        <figure class="character-placeholder">
+            <img src="/IMG/dragao.png" alt="Charizard" class="character">
+        </figure>
+    </main>
 
-    <div class="character-placeholder">
-      <img src="/pokedex/IMG/image 8 (1).png" alt="Charizard" class="character">
-    </div>
-
-  </div>
-
-  <script src="/script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 
 </html>

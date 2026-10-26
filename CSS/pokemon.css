@@ -1,176 +1,288 @@
-/* ===== pokemon.css — adicione <link rel="stylesheet" href="/CSS/pokemon.css"> no pokemon.html ===== */
 @import url("style.css");
-
-main {
-    display: grid;
-    grid-template-columns: 230px 1fr 270px;
-    gap: 24px;
-    align-items: start
-}
-
-main>.barra,
-main>.hr,
-main>article,
-main>aside {
-    grid-column: 1/-1
-}
-
-main::before {
-    content: "";
-    grid-column: 1;
-    grid-row: 2;
-    height: 290px;
-    background: var(--painel);
-    border: 1px solid #23232b;
-    border-radius: 18px
-}
-
 .barra {
-    display: flex;
-    align-items: center;
-    gap: 14px
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 10px;
 }
-
+.barra .pesquisa {
+  margin-left: auto;
+}
 .barra #pesquisar {
-    margin: 0 0 0 auto;
-    width: 200px;
-    border-color: #2a2a33;
-    background-color: #17171d;
-    background-image: none;
-    padding-left: 16px
+  width: 200px;
+  border-color: #2a2a33;
+  background-color: #17171d;
+  background-image: none;
+  padding-left: 16px;
 }
-
 .setaVoltar {
-    width: 28px;
-    height: 28px;
-    border: 1px solid var(--ouro-claro);
-    border-radius: 50%;
-    padding: 6px
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--ouro-claro);
+  border-radius: 50%;
+  padding: 6px;
+  display: block;
 }
 
+.titulo-pokemon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+.titulo-pokemon h1 {
+  font-size: 1.8rem;
+  text-align: center;
+}
+.titulo-pokemon small {
+  color: var(--ouro-claro);
+  font-size: 1rem;
+  margin-left: 6px;
+}
+
+.detalhe {
+  display: grid;
+  grid-template-columns: 230px 1fr 270px;
+  gap: 24px;
+  align-items: start;
+}
+.ficha {
+  background: var(--painel);
+  border: 1px solid #23232b;
+  border-radius: 18px;
+  padding: 18px;
+  display: grid;
+  gap: 10px;
+}
+.tipos-ficha {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+.tipo-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #fff;
+  padding: 3px 12px;
+  border-radius: 12px;
+  background: #555;
+}
+.ficha dl > div {
+  background: #0d0d12;
+  border-radius: 10px;
+  padding: 10px 12px;
+  margin-bottom: 10px;
+}
+.ficha dt {
+  color: var(--mudo);
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+.ficha dd {
+  font-size: 1rem;
+  font-weight: 700;
+}
+.ficha .btn-favorito {
+  position: static;
+  width: 100%;
+  border-radius: 10px;
+  height: 36px;
+  background: #0d0d12;
+  border: 1px solid var(--borda);
+}
+.figura {
+  margin: 0;
+}
 .pokemon {
-    grid-column: 2;
-    grid-row: 2;
-    width: 100%;
-    height: 290px;
-    object-fit: contain;
-    padding: 18px;
-    background: linear-gradient(#d4b800, #000 90%);
-    border-radius: 18px
+  display: block;
+  width: 100%;
+  height: 290px;
+  object-fit: contain;
+  padding: 18px;
+  background: linear-gradient(var(--cor-tipo, #d4b800), #000 90%);
+  border-radius: 18px;
 }
 
 .estatistica {
-    grid-column: 3;
-    grid-row: 2;
-    background: var(--painel);
-    border: 1px solid var(--ouro-claro);
-    border-radius: 18px;
-    padding: 18px
+  background: var(--painel);
+  border: 1px solid var(--ouro-claro);
+  border-radius: 18px;
+  padding: 18px;
 }
-
-.estatistica::before {
-    content: "ESTATÍSTICAS";
-    display: block;
-    font-weight: 700;
-    margin-bottom: 12px
+.estatistica h2 {
+  font-size: 1rem;
+  margin-bottom: 12px;
 }
-
 .estatistica li {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: .72rem;
-    color: var(--mudo);
-    margin: 10px 0
+  display: grid;
+  grid-template-columns: 92px 1fr 34px;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.72rem;
+  color: var(--mudo);
+  margin: 10px 0;
+}
+.estatistica b {
+  color: #fff;
+  text-align: right;
+}
+.barra-stat {
+  height: 6px;
+  border-radius: 3px;
+  background: #2b2b33;
+  position: relative;
+  overflow: hidden;
+}
+.barra-stat::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: calc(var(--v, 0) * 1%);
+  background: var(--ouro-claro);
+  transition: width 0.9s ease;
+}
+.total {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #2b2b33;
+  padding-top: 10px;
+  font-size: 0.75rem;
+  color: var(--mudo);
+}
+.total b {
+  color: var(--ouro-claro);
+  font-size: 1.1rem;
 }
 
-.estatistica li::after {
-    content: "";
-    flex: 1;
-    height: 5px;
-    border-radius: 3px;
-    order: 2;
-    background: linear-gradient(var(--ouro-claro), var(--ouro-claro)) left/calc(var(--v, 50)*1%) 100% no-repeat, #2b2b33
+.secao {
+  margin-top: 34px;
 }
-
 .hr {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin: 30px 0 4px;
-    color: var(--ouro-claro);
-    font-size: .85rem;
-    font-weight: 700
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  color: var(--ouro-claro);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
 }
-
 .hr img {
-    width: 16px;
-    height: 16px
+  width: 16px;
+  height: 16px;
+}
+.hr::after {
+  content: "";
+  flex: 1;
+  border-top: 1px solid #3a3a3a;
+}
+.variantes,
+.locais {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.variante a {
+  display: block;
+  position: relative;
+  width: 170px;
+  min-height: 130px;
+  background: var(--painel);
+  border: 1px solid #2a2a33;
+  border-radius: 14px;
+  padding: 12px;
+  font-size: 0.8rem;
+}
+.variante a:hover,
+.variante.atual a {
+  border-color: var(--ouro-claro);
+}
+.variante .selo {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 0.6rem;
+  padding: 2px 7px;
+  border: 1px solid var(--ouro-claro);
+  color: var(--ouro-claro);
+  border-radius: 5px;
+}
+.variante img {
+  display: block;
+  width: 100%;
+  height: 80px;
+  object-fit: contain;
+  margin-top: 10px;
+}
+.local {
+  background: var(--painel);
+  border: 1px solid #2a2a33;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.78rem;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.badge {
+  font-size: 0.6rem;
+  padding: 2px 7px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+.comum {
+  color: #4ade80;
+}
+.raro {
+  color: #fb923c;
 }
 
-.hr hr {
-    flex: 1;
-    border: 0;
-    border-top: 1px solid #3a3a3a
+.erro-pokemon {
+  text-align: center;
+  padding: 60px 0;
+}
+.erro-pokemon p {
+  color: var(--mudo);
+  margin: 10px 0 22px;
+}
+.ficha .btn-favorito.ativo {
+  color: var(--vermelho);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .ficha .btn-favorito.pulsar {
+    animation: batida 0.4s ease;
+  }
+}
+.btn-voltar {
+  display: inline-block;
+  background: linear-gradient(#c4ad52, #a58f3c);
+  color: #000;
+  border-radius: 10px;
+  padding: 9px 22px;
+  font-weight: 700;
 }
 
-main>article {
-    display: flex;
-    gap: 18px;
-    justify-content: center;
-    flex-wrap: wrap
+@media (prefers-reduced-motion: no-preference) {
+  main.carregando .detalhe {
+    animation: respirar 1.2s ease-in-out infinite;
+  }
+  .pokemon {
+    animation: entrar 0.5s ease-out;
+  }
 }
-
-main>article div {
-    position: relative;
-    width: 170px;
-    min-height: 130px;
-    background: var(--painel);
-    border: 1px solid #2a2a33;
-    border-radius: 14px;
-    padding: 12px;
-    font-size: .8rem
-}
-
-main>article span {
-    position: absolute;
-    top: 12px;
-    right: 12px;
-    font-size: .6rem;
-    padding: 2px 7px;
-    border: 1px solid var(--ouro-claro);
-    color: var(--ouro-claro);
-    border-radius: 5px
-}
-
-main>article img {
-    display: block;
-    width: 100%;
-    height: 80px;
-    object-fit: contain;
-    margin-top: 10px
-}
-
-main>aside {
-    display: flex;
-    gap: 14px;
-    justify-content: center;
-    flex-wrap: wrap
-}
-
-@media(max-width:900px) {
-    main {
-        grid-template-columns: 1fr
-    }
-
-    main::before {
-        display: none
-    }
-
-    .pokemon,
-    .estatistica {
-        grid-column: 1;
-        grid-row: auto
-    }
+@media (max-width: 900px) {
+  .detalhe {
+    grid-template-columns: 1fr;
+  }
+  .figura {
+    order: 1;
+  }
+  .ficha {
+    order: 2;
+  }
+  .estatistica {
+    order: 3;
+  }
 }

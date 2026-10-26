@@ -4,32 +4,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="rec.senha.css">
-    <link rel="stylesheet" href="/CSS/extras.css">
-
-
+    <link rel="stylesheet" href="/CSS/rec.senha.css">
     <title>Recuperar Senha - Pokedex</title>
 </head>
 
-<body>
-    <header>
-        <img src="" alt="" class="imagemHeader">
-    </header>
-    <main>
-        div class="recuperarSenha">
-        <h1>Recuperar Senha</h1>
-        <p>Digite seu e-mail para receber instruções de recuperação de senha.</p>
+<body data-pagina="recuperar">
+    <main class="container">
+        <section class="login-box recuperar" aria-labelledby="titulo-rec">
+            <a href="/HTML/login.html" class="voltar-login">&#8592; Voltar para o login</a>
+            <h1 id="titulo-rec">Recuperar Senha</h1>
+            <p>Digite seu e-mail para receber instruções de recuperação de senha.</p>
 
-        <form action="">
-            <input type="email" required placeholder="E-MAIL">
-            <label id="email" for="email"></label>
+            <form id="form-recuperar">
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="E-MAIL" autocomplete="email">
+                </div>
 
-            <button type="submit"> ENVIAR </button>
-        </form>
+                <div class="campo campo-espacamento" id="bloco-nova-senha" hidden>
+                    <label for="senha">Nova senha</label>
+                    <input type="password" id="senha" name="senha" minlength="6" placeholder="NOVA SENHA" autocomplete="new-password">
+                </div>
+
+                <button type="submit" class="btn-entrar">ENVIAR</button>
+            </form>
+        </section>
     </main>
 
-    <script src="/script.js"></script>
-
+    <script src="../script.js"></script>
 </body>
 
 </html>

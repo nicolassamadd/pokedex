@@ -5,73 +5,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/pokemon.css">
-    <link rel="stylesheet" href="/CSS/extras.css">
     <title>Pokémon - Pokedex</title>
 </head>
 
-<body>
-    <header>
-        <!-- Menu Hamburger -->
-        <div class="menu-hamburger">
-            <div class="Perfil"></div>
-            <div class="Meus favoritos"></div>
-            <div class="Mais Pokémons"></div>
-            <div class="Sair / Deslogar"></div>
-        </div>
-
-        <img src="/IMG/dragao.png" alt="Imagem de um dragão soltando fogo." class="imagemHeader">
-
-        <a href="perfil.html"><img src="/IMG/user.png" alt="Icone de usuário." class="imgUser"></a>
-    </header>
-    <main>
-        <div class="barra">
-            <a href="index.html"><img src="/IMG/seta.png" alt="Voltar para a página inicial." class="setaVoltar"></a>
-
-            <input type="text" placeholder="Pesquisar Pokémon" id="pesquisar">
-            <label for="pesquisar"></label>
-        </div>
-
-        <!-- Tudo abaixo é preenchido pelo script.js com os dados da PokeAPI (pokemon.html?id=NÚMERO) -->
-        <!-- A ficha (tipo, peso, altura e categoria) é criada pelo script.js antes desta imagem -->
-        <img alt="Imagem do pokemon." class="pokemon">
-
-        <div class="estatistica">
+<body data-pagina="pokemon">
+    <a class="pular" href="#conteudo">Ir para o conteúdo</a>
+    <header class="topo">
+        <button type="button" class="menu-hamburger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-lista"></button>
+        <nav id="menu-lista" class="menu-lista" aria-label="Menu principal" hidden>
             <ul>
-                <li style="--v:0">HP: -</li>
-                <li style="--v:0">ATAQUE: -</li>
-                <li style="--v:0">DEFESA: -</li>
-                <li style="--v:0">SP. ATK: -</li>
-                <li style="--v:0">SP. DEF: -</li>
-                <li style="--v:0">VELOCIDADE: -</li>
+                <li><a href="/HTML/perfil.html"><span class="icone" aria-hidden="true">👤</span>Perfil</a></li>
+                <li><a href="/HTML/favoritos.html"><span class="icone" aria-hidden="true">♥</span>Meus favoritos <span class="contador" hidden>0</span></a></li>
+                <li><a href="/HTML/index.html"><span class="icone" aria-hidden="true">⚡</span>Mais Pokémons</a></li>
+                <li><button type="button" class="sair" id="btn-sair"><span class="icone" aria-hidden="true">⎋</span>Sair / Deslogar</button></li>
             </ul>
-            <div class="total"><span>TOTAL</span><b>-</b></div>
+        </nav>
+        <a href="/HTML/index.html" class="logo"><img src="/IMG/dragao.png" alt="Pokédex - dragão soltando fogo." class="imagemHeader"></a>
+        <a href="/HTML/perfil.html" class="btn-user" aria-label="Meu perfil"><img src="/IMG/user.png" alt="" class="imgUser"></a>
+    </header>
+    <main id="conteudo" class="pagina-pokemon carregando">
+        <div class="barra">
+            <a href="/HTML/index.html"><img src="/IMG/seta.png" alt="Voltar para a página inicial." class="setaVoltar"></a>
+            <form class="pesquisa" role="search">
+                <label for="pesquisar" class="so-leitor">Pesquisar Pokémon</label>
+                <input type="search" placeholder="Pesquisar Pokémon" id="pesquisar" autocomplete="off">
+            </form>
         </div>
 
-        <div class="hr">
-            <img src="/IMG/estrela.png" alt="">
-            <p>FORMAS / VARIANTES</p>
-            <hr>
+        <div class="titulo-pokemon">
+            <h1><span id="nome-pokemon">Carregando...</span><small id="numero-pokemon"></small></h1>
         </div>
 
-        <!-- Formas / variantes: criadas pelo script.js -->
-        <article></article>
+        <div class="detalhe">
+            <aside class="ficha" aria-label="Ficha técnica">
+                <ul class="tipos-ficha" id="tipos" aria-label="Tipos"></ul>
+                <dl>
+                    <div><dt>Peso</dt><dd id="peso">-</dd></div>
+                    <div><dt>Altura</dt><dd id="altura">-</dd></div>
+                    <div><dt>Categoria</dt><dd id="categoria">-</dd></div>
+                    <div><dt>Habilidades</dt><dd id="habilidades">-</dd></div>
+                </dl>
+                <button type="button" class="btn-favorito" id="btn-favorito">♡ Favoritar</button>
+            </aside>
 
-        <div class="hr">
-            <img src="/IMG/pin.png" alt="">
-            <p>ONDE ENCONTRAR?</p>
-            <hr>
+            <figure class="figura">
+                <img class="pokemon" id="imagem" alt="Imagem do pokemon.">
+            </figure>
+
+            <section class="estatistica" aria-labelledby="titulo-stats">
+                <h2 id="titulo-stats">Estatísticas</h2>
+                <ul id="stats">
+                    <li><span>HP</span><span class="barra-stat"></span><b>-</b></li>
+                    <li><span>ATAQUE</span><span class="barra-stat"></span><b>-</b></li>
+                    <li><span>DEFESA</span><span class="barra-stat"></span><b>-</b></li>
+                    <li><span>SP. ATK</span><span class="barra-stat"></span><b>-</b></li>
+                    <li><span>SP. DEF</span><span class="barra-stat"></span><b>-</b></li>
+                    <li><span>VELOCIDADE</span><span class="barra-stat"></span><b>-</b></li>
+                </ul>
+                <p class="total"><span>TOTAL</span><b id="total">-</b></p>
+            </section>
         </div>
 
-        <!-- Locais: criados pelo script.js -->
-        <aside></aside>
+        <section class="secao" aria-labelledby="titulo-formas">
+            <h2 class="hr" id="titulo-formas"><img src="IMG/estrela.png" alt="">Formas / Variantes</h2>
+            <ul class="variantes" id="variantes"></ul>
+        </section>
+
+        <section class="secao" aria-labelledby="titulo-locais">
+            <h2 class="hr" id="titulo-locais"><img src="IMG/pin.png" alt="">Onde encontrar?</h2>
+            <ul class="locais" id="locais"></ul>
+        </section>
     </main>
     <footer>
-        <div class="informacoesFooter">
-            <p>© 2026 Pokedex. Todos os direitos reservados.</p>
-            <p>Desenvolvido por PIE UniAmérica.</p>
-        </div>
+        <p>© 2026 Pokedex. Todos os direitos reservados.</p>
+        <p>Desenvolvido por PIE UniAmérica.</p>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="../script.js"></script>
 </body>
 
 </html>

@@ -5,42 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/CSS/login.css">
-    <link rel="stylesheet" href="/CSS/extras.css">
-
     <title>Login - Pokedex</title>
 </head>
 
-<body>
-    <header>
-        <img src="/IMG/dragao.png" alt="Imagem de um dragão soltando fogo." class="imagemHeader">
-        <img src="/IMG/img-login.png"
-            alt="Uma imagem com uma escrita Login e um desenho de uma pokebola logo abaixo da ecrita."
-            class="imagemHeader">
-    </header>
-    <main>
-        <div class="ladoesquerdo">
-            <form action="">
-                <input type="email" required placeholder="E-MAIL">
-                <label id="email" for="email"></label>
+<body data-pagina="login">
+    <main class="container">
+        <section class="login-box" aria-labelledby="titulo-login">
+            <header class="logo-topo">
+                <img src="/IMG/dragao.png" alt="Dragão soltando fogo." class="logo-dragao">
+                <h1 id="titulo-login"><img src="/IMG/img-login.png" alt="Login" class="titulo-img"></h1>
+            </header>
 
-                <input type="password" required placeholder="SENHA">
-                <label id="senha" for="senha"></label>
+            <form id="form-login">
+                <div class="campo">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="E-MAIL" autocomplete="email">
+                </div>
 
-                <button type="submit"> ENTRAR </button>
+                <div class="campo campo-espacamento">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" required placeholder="SENHA" autocomplete="current-password">
+                    <button type="button" class="btn-olho" data-olho="senha" aria-label="Mostrar senha">Mostrar</button>
+                </div>
+
+                <button type="submit" class="btn-entrar">ENTRAR</button>
             </form>
 
-            <a href="/HTML/rec.senha.html">Esqueceu sua senha?</a>
+            <p class="esqueceu"><a href="/HTML/rec.senha.html">Esqueceu sua senha?</a></p>
+            <a href="/HTML/cadastro.html" class="btn-criar-conta">CRIAR CONTA</a>
+        </section>
 
-            <a href="/HTML/cadastro.html">CRIAR CONTA</a>
-        </div>
-
-        <div class="ladodireito">
-            <img src="/IMG/pokedex.png" alt="Uma escrita Pokedex.">
-            <img src="/IMG/pikachu.png" alt="Imagem do pokemón Pikachu.">
-        </div>
+        <aside class="ilustracao">
+            <img src="/IMG/pokedex.png" alt="Pokédex">
+            <img src="/IMG/pikachu.png" alt="Imagem do pokemon Pikachu.">
+        </aside>
     </main>
 
-    <script src="/script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>
